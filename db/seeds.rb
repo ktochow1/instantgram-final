@@ -10,4 +10,6 @@ yorkie = Post.create(title: "Alfie the Doggo")
 paris = Post.create(title: "Paris")
 nyc = Post.create(title: "NYC")
 
-Comment.create(description: "Alfie is the cutest!!!", post_id = yorkie.id)
+comment1 = Comment.create(content: "Alfie is the cutest!!!", post_id: yorkie.id)
+
+like1 = Like.create(like: 300, post_id: yorkie.id)
