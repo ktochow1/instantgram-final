@@ -1,7 +1,12 @@
 class Api::V1::PostsController < ApplicationController
+
   def index
-    @posts = Post.all
-    render json: @posts
+    render json: PostSerializer.new(Post.all)
+  end
+
+  def show
+    post = Post.find(params[:id])
+    render json: PostSerializer.new(post)
   end
 
   private
