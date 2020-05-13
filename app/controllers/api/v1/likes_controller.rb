@@ -8,4 +8,10 @@ class Api::V1::LikesController < ApplicationController
     like = Like.find(params[:id])
     render json: LikeSerializer.new(like)
   end
+
+  private
+
+  def like_params
+    params.require(:like).permit(:likes)
+  end
 end
