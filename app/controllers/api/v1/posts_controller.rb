@@ -34,7 +34,7 @@ class Api::V1::PostsController < ApplicationController
       render json: {errors: post.errors.fullmessages}, status: :unprocessible_entity
     end
   end
-  
+
   # def delete
   # end
 
