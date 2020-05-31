@@ -5,6 +5,7 @@ class Api::V1::PostsController < ApplicationController
     render json: posts, include: [:likes, :comments]
     # render json: PostSerializer.new(Post.all)
   end
+<<<<<<< HEAD
 
   def create
      post = Post.new(post_params)
@@ -15,6 +16,18 @@ class Api::V1::PostsController < ApplicationController
        render json: {errors: post.errors.fullmessages}, status: :unprocessible_entity #this can be displayed to frontend
      end
   end
+=======
+  #
+  # def create
+  #    post = Post.new(post_params)
+  #    # byebug
+  #    if post.save
+  #      render json: PostSerializer.new(post), status: :accepted #send status code to fetch request tells client if request rejected or passed
+  #    else
+  #      render json: {errors: post.errors.fullmessages}, status: :unprocessible_entity #this can be displayed to frontend
+  #    end
+  # end
+>>>>>>> 820ec7691a7f252e425840df783680ae99702ce4
 
 
   def show
@@ -27,6 +40,14 @@ class Api::V1::PostsController < ApplicationController
   #   binding.pry
   # end
   #
+<<<<<<< HEAD
+=======
+  # def update
+  #   post = Post.find_by(id: params[:id])
+  #   binding.pry
+  # end
+  #
+>>>>>>> 820ec7691a7f252e425840df783680ae99702ce4
   # def edit
   #   post = Post.find_by(id: params[:id])
   #   if post.valid?
@@ -39,9 +60,9 @@ class Api::V1::PostsController < ApplicationController
   # def delete
   # end
 
-  private
+  # private
 
-  def post_params
-    params.require(:post).permit(:title, :image_url)
-  end
+  # def post_params
+  #   params.require(:post).permit(:title, :image_url)
+  # end
 end
