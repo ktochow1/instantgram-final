@@ -2,7 +2,7 @@ class Api::V1::LikesController < ApplicationController
 
 
 
-end 
+end
 
   def index
     render json: LikeSerializer.new(Like.all)
@@ -19,4 +19,3 @@ end
     params.require(:like).permit(:likes)
   end
 end
-
