@@ -5,10 +5,7 @@ class Api::V1::PostsController < ApplicationController
     render json: posts, include: [:likes, :comments]
     # render json: PostSerializer.new(Post.all)
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> 4028ae5dd138bef66b4a2cb81f65ad7cd4c41218
 
   def create
      post = Post.new(post_params)
@@ -19,8 +16,7 @@ class Api::V1::PostsController < ApplicationController
        render json: {errors: post.errors.fullmessages}, status: :unprocessible_entity #this can be displayed to frontend
      end
   end
-<<<<<<< HEAD
-=======
+
 
   #
   # def create
@@ -32,9 +28,7 @@ class Api::V1::PostsController < ApplicationController
   #      render json: {errors: post.errors.fullmessages}, status: :unprocessible_entity #this can be displayed to frontend
   #    end
   # end
->>>>>>> 4028ae5dd138bef66b4a2cb81f65ad7cd4c41218
-
-
+  
   def show
     post = Post.find(params[:id])
     render json: post
@@ -45,8 +39,6 @@ class Api::V1::PostsController < ApplicationController
   #   binding.pry
   # end
   #
-<<<<<<< HEAD
-=======
 
   # def update
   #   post = Post.find_by(id: params[:id])
@@ -54,7 +46,6 @@ class Api::V1::PostsController < ApplicationController
   # end
   #
 
->>>>>>> 4028ae5dd138bef66b4a2cb81f65ad7cd4c41218
   # def edit
   #   post = Post.find_by(id: params[:id])
   #   if post.valid?
