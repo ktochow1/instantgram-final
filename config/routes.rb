@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :posts, only: [:index, :create, :update, :edit, :delete]
+      resources :posts, only: [:index, :create, :update, :edit, :delete, :show]
+      # resources :comments, only: [:index]
     end
   end
 
@@ -13,11 +14,11 @@ Rails.application.routes.draw do
   #     resources :comments, only: [:index, :show, :create, :edit, :update, :delete]
   #   end
   # end
-  namespace :api do
-    namespace :v1 do
-      resources :likes, only: [:index, :create]
-    end
-  end
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :likes, only: [:index, :create]
+  #   end
+  # end
   # namespace :api do
   #   namespace :v1 do
   #     resources :likes, only: [:index, :show, :delete, :edit, :update, :create]
