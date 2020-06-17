@@ -16,7 +16,8 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def delete
-    post = Post.find(post_params[:id])
+    binding.pry
+    post = Post.find(params[:id])
     post.destroy
   end
 
@@ -28,13 +29,6 @@ class Api::V1::PostsController < ApplicationController
   def edit
     # post = Post.find(post_params[:id])
   end
-
-
-
-
-
-
-
 
 
   def update
