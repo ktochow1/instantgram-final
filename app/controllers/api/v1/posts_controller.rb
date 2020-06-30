@@ -7,37 +7,35 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-     post = Post.new(post_params)
-     if post.save
-       render json: post, status: :accepted #send status code to fetch request tells client if request rejected or passed
-     else
-       render json: {errors: post.errors}, status: :unprocessible_entity #this can be displayed to frontend
+      # binding.pry
+      post = Post.new(post_params)
+      post.id = params[:id]
+      if post.id == nil
+        render json: post, status: :accepted
+       # render json: {errors: post.errors}, status: :unprocessible_entity
+     elsif post.save
+       post.destroy
+       render json: post, status: :accepted
+         # render json: {errors: post.errors}, status: :unprocessible_entity #send status code to fetch request tells client if request rejected or passed
+       #this can be displayed to frontend
      end
   end
 
-  def delete
-    binding.pry
+  def destroy
+    # binding.pry
+    #how to remove object from dom without refresh
     post = Post.find(params[:id])
     post.destroy
+    # render body: nil, status: :no_content
   end
-
-  # def show
-  #   post = Post.find(params[:id])
-  #   render json: post
-  # end
-
-  def edit
-    # post = Post.find(post_params[:id])
-  end
-
 
   def update
-    # binding.pry
+
     post = Post.find(params[:id])
     if post.valid?
       post.title = post_params[:title]
       post.image_url = post_params[:image_url]
-      post.save
+      post.update
       render json: PostSerializer.new(post)
       # render json: post, status: :accepted
     else

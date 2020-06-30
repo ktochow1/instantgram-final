@@ -1,6 +1,6 @@
 class LikeSerializer
   include FastJsonapi::ObjectSerializer
-  # attributes :likes#, :posts
+  attributes :counter, :post_id
   belongs_to :post
   #
   # def posts

@@ -1,7 +1,7 @@
-class PostSerializer #< ActiveModel::Serializer
+class PostSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :image_url
-  has_many :likes
+  attributes :title, :image_url, :like
+  has_one :like
   has_many :comments
 
   # def likes

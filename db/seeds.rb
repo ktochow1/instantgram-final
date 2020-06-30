@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+Post.create(title: "New Post", image_url: "www.helloworld.com")
+Like.create(post_id: 1, counter: 2)
