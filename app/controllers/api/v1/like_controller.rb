@@ -6,16 +6,11 @@ class Api::V1::LikeController < ApplicationController
 
   def update
     like = Like.find(params[:id])
-    if like.update(like_params)
+    # binding.pry
+    if like.valid?
+      like.update(like_params)
       render json: LikeSerializer.new(like)
     end
-
-    # if like.valid?
-    #   like.update(like_params)
-    #   like.save!
-    # end
-    # binding.pry
-    # render json: LikeSerializer.new(like)
   end
 
   private

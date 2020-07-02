@@ -10,13 +10,13 @@ class Api::V1::PostsController < ApplicationController
       # binding.pry
       post = Post.new(post_params)
       post.id = params[:id]
-      if post.id == nil
-        render json: post, status: :accepted
+      if post.valid?
+        post.save
+        render json: PostSerializer.new(post)
        # render json: {errors: post.errors}, status: :unprocessible_entity
-     elsif post.save
-       post.destroy
-       render json: post, status: :accepted
-         # render json: {errors: post.errors}, status: :unprocessible_entity #send status code to fetch request tells client if request rejected or passed
+     else
+       # render json: post, status: :accepted
+        render json: {errors: post.errors}, status: :unprocessible_entity #send status code to fetch request tells client if request rejected or passed
        #this can be displayed to frontend
      end
   end
@@ -30,7 +30,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
-
+    # binding.pry
     post = Post.find(params[:id])
     if post.valid?
       post.title = post_params[:title]
