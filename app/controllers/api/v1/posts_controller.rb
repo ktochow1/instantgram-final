@@ -7,8 +7,8 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-      # binding.pry
-      post = Post.new(post_params)
+      binding.pry
+      post = Post.create(post_params)
       post.id = params[:id]
       if post.valid?
         post.save
@@ -22,7 +22,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def destroy
-    # binding.pry
+    binding.pry
     #how to remove object from dom without refresh
     post = Post.find(params[:id])
     post.destroy
@@ -30,12 +30,11 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
-    # binding.pry
     post = Post.find(params[:id])
     if post.valid?
       post.title = post_params[:title]
       post.image_url = post_params[:image_url]
-      post.update
+      post.save
       render json: PostSerializer.new(post)
       # render json: post, status: :accepted
     else
@@ -46,6 +45,6 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :image_url)
+    params.require(:post).permit(:title, :image_url, like_attributes: [:counter])
   end
 end

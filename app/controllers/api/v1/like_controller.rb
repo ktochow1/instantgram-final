@@ -1,12 +1,12 @@
 class Api::V1::LikeController < ApplicationController
 
   def index
+    binding.pry
     render json: LikeSerializer.new(Like.all.last)
   end
 
   def update
     like = Like.find(params[:id])
-    # binding.pry
     if like.valid?
       like.update(like_params)
       render json: LikeSerializer.new(like)
