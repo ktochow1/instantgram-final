@@ -8,4 +8,9 @@
 
 
 Post.create(title: "New Post", image_url: "www.helloworld.com")
-Like.create(post_id: 1, counter: 2)
+Post.create(title: "Hello World", image_url: "www.hellworld.com")
+Post.create(title:"Hey", image_url:"www.yeh.com")
+
+Like.create(post_id: 1)
+Like.create(post_id: 2)
+
