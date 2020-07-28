@@ -1,6 +1,6 @@
 class CommentSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :content
+  attributes :content, :post
   belongs_to :post
 
   # def blog

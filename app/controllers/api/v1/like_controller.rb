@@ -6,9 +6,10 @@ class Api::V1::LikeController < ApplicationController
   end
 
   def create
-    binding.pry
-    like = Like.create(like_params)
+    # binding.pry
+    like = Like.create()
     like.post_id = params[:post_id].to_i
+    like.counter = params[:counter]
     if like.valid?
       like.save
       render json: LikeSerializer.new(like)
