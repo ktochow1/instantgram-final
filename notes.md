@@ -556,3 +556,259 @@ post-frontend/src/index.html
       // let postDiv = document.createElement("div")
       // postDiv.innerHTML = post.postContainer.innerHTML
       // fcontainer.appendChild(post)
+
+
+      // let postId = postData.id
+      // let currentContainer = document.querySelector(`.post-container`)
+      // console.log(currentContainer)
+
+      // console.log(comments)
+    // console.log(postData.attributes.comments)
+      // postData.relationships.comments.data.forEach(e => {console.log(e)})
+      // let sortButton = document.createElement("button")
+      // let sortButtonText = document.createTextNode("Sort")
+      // sortButton.appendChild(sortButtonText)
+      // let div = document.querySelector("#div-container");
+      // div.appendChild(sortButton)
+
+      
+        // let allPosts = posts.data
+        
+        // console.log(allPosts)
+        // const entries = Object.entries(allPosts)
+        // allPosts.forEach(post => {
+        //   console.log(post)
+        //   // const values = Object.values(post)
+        //   // const titles = values[2]
+          
+        //   // console.log(values[2])
+          
+        // })
+
+
+      
+      // console.log(div)
+      // let divChildren = div.children
+      // divChildren = document.querySelectorAll('.post-container')
+      // Array.from(divChildren).forEach((e) => {
+      //   return e.firstElementChild.innerText
+      // })
+      // jsonPostTitle = document.getElementsByClassName('post-container')
+      // console.log(jsonPostTitle)
+
+      // Array.from(jsonPostTitle).forEach(e => {
+      //   let title = e.firstElementChild
+      //   return title
+      // })
+      
+      
+      // newArr = jsonPostTitle.map((el) => {
+      //   console.log(el)
+      // })
+      // console.log(newArr)
+      // let domPost = document.querySelectorAll('post-container')
+      // let domPostTitle = post.postContainer.firstElementChild
+      // json.data = document.body.getElementsByClassName("post-container")
+      // console.log()
+      // json.data = post.postContainer
+      // jsonPostTitle.forEach((e) => {
+      //   e = document.querySelectorAll('.post-container')
+      //   // console.log(e)
+
+      // })
+
+
+      // let newArr = jsonPostTitle.map((el) => {
+      //   // el = document.querySelector('.post-container')
+      //   return el
+      // })
+      // newArr.sort()
+      // console.log(newArr)
+      // })
+      // console.log(newArr)
+        // console.log(domPost)
+      // Array.from(jsonPostTitle).forEach((el) => {
+      //   // console.log(el)
+      //   el = document.getElementsByClassName('post-container')
+      //   Array.from(el).forEach((el) => {
+      //     console.log(el)
+      //   })
+      //   // console.log(el)
+      //   // .firstElementChild.innerHTML
+      // })
+      
+      
+      // console.log(json.data.getElementByTagName('h3'))
+      // let posts = json.data.document.body
+      // posts.document.body.getElementByTagName('h3')
+      // console.log(json.data)
+      // newArr.push(post.postContainer)
+      // // post.postContainer
+      // console.log(newArr)
+      // json.data = document.body.getElementsByClassName("post-container")
+        // console.log(json.data)
+        // let newArr = json.data.map((el) => {
+          // console.log(el)
+        
+
+        // console.log(newArr)
+        
+        // {
+          // let jsonData = json.data.sort((a, b) => {
+          //   return a.attributes.title > b.attributes.title
+          //   // console.log(a.attributes.title)
+          // })
+          // console.log(json)
+        // let newArr = json.data.map((el) => {
+          // let titles = el.attributes.title
+          
+          // let posts = document.getElementsByClassName('post-container')
+        //   let title = el.attributes.title
+        //   let post = document.getElementsByClassName('post-title')
+        //   console.log(title)
+        //   return post
+          // console.log(post)
+
+          // console.log(el.attributes.title)
+          // console.log(post)
+          // post.title = document.querySelector('.')
+          // post.title = document.querySelector('.post-container .post-title')
+          // console.log(post)
+          // return posts
+          // console.log(posts)
+          // console.log(el)
+          // return titles
+        // })
+        // console.log(newArr)
+
+        // newArr.forEach(e => {
+        //   let divContainer = document.body.children[2].children
+        //   // .querySelector('')    
+        //   // console.log(divContainer)
+          
+        // })
+
+        // newArr.sort((a, b) => {
+        //   // let nameA = document.querySelector(a)
+        //   console.log(a)
+        // })
+        // 
+          // var nameA = a
+          // var nameB = b.attributes.title.toUpperCase()
+          // console.log(nameA)
+          // if(nameA < nameB){
+          //   return -1
+          // }
+          // if(nameA > nameB){
+          //   return 1
+          // }
+          // return 0
+        // })
+
+          
+         
+        
+        // let jsonArr = json.data
+        // const entries = Object.entries(jsonArr)
+        // let attributes = entries[1][1]
+        // let jackpot = Object.entries(attributes.attributes)
+        // jackpot[0][1].push(postTitlesArray)
+        // console.log(postTitlesArray)
+        // console.log(Object.entries(attributes))
+        // let titles = Object.entries(attributes)
+        // console.log(titles)
+        // console.log(entries[1][1])
+        // const newArr = entries[1]
+        // let attributes = Object.entries(newArr)
+        // console.log(attributes)
+        // console.log(entries)
+        // console.log(jsonArr)
+        // entries.map(x => {
+        //   console.log(x)
+        // })
+        // console.log(postTitlesArray)
+        // json.data.forEach(post => {
+          // postTitlesArray.push(post.attributes.title)
+          // postTitlesArray.map(post => {
+          //   console.log(post)
+          // })
+          // console.log(postTitlesArray)
+          //   .attributes.title)
+          // console.log(postTitlesArray)
+        // })
+        // return postTitlesArray
+      // })
+
+    
+
+      // postData.attributes.comments.forEach(c => {console.log(c)})
+
+            // mainDiv.append(sortedContainer)
+      
+      // mainDiv.append(alphabeticalPosts)
+      // .forEach((e) => {
+      //   e.remove()
+      // })
+      
+      // mainDiv.append(alphabeticalPosts)
+      // let divPosts = div.childNodes 
+      // let allPosts = []
+      //  for(var i in divPosts){
+      //    if(divPosts[i] == 1){
+      //      allPosts.push(divPosts[i])
+      //    }
+      //  }
+
+
+       
+    //   const allDivs = document.querySelectorAll(".post-container")
+    //   let titleArr = []
+    //   for(var i = 0; i < allDivs.length; i++){
+    //     allDivs.forEach(e => {
+    //       let collection = e.children 
+    //       titleArr.push(collection[0].innerHTML)
+    //       console.log(titleArr)
+    //   })
+    // }
+      // Array.from.divContainer.forEach((el) => {
+      //   console.log(el)
+      // })/
+    //  console.log(div)
+       
+     
+      
+      // let newDiv = document.createElement('div')
+      
+      
+      // docBody.appendChild(newDiv)
+
+          //   fetch(endpoint)
+    //   .then(resp => resp.json())
+    //   .then(json => {
+    //   // let jsonArr = json.data
+    //   // for(const post of jsonArr){
+    //   //   let newArr = jsonArr.map((e) => {
+    //   //     return e.attributes.title
+    //   //   })
+    //   //   // jsonArr.forEach((el) => {
+    //   //   //   // console.log(el)
+    //   //   // })
+    //   // }
+    //     // let bigDiv = document.querySelector('div#div-container')
+        
+        
+    //     // bigDiv.remove(components)
+        
+        
+    //     let newArr = json.data.map((e) => {
+    //       // console.log(e)
+    //       e = document.querySelectorAll('div.post-container')
+    //       // console.log(e)
+    //     })
+    //     let sortedArr = newArr.sort()
+    //     // console.log(newArr)
+    //     sortedArr.forEach(el => {
+    //       // console.log(el)
+    //     })
+    // })
+    

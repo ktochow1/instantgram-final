@@ -11,7 +11,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
       post = Post.new
       post.title = post_params[:title]
       post.image_url = post_params[:image_url]
