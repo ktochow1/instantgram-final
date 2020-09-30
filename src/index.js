@@ -1,8 +1,8 @@
 const endpoint = "http://localhost:3000/api/v1/posts"
 
 document.addEventListener("DOMContentLoaded", () => {
-    getPosts();    
-  })
+  getPosts();    
+})
 
 function getPosts(){
   fetch(endpoint)
@@ -20,10 +20,9 @@ function getPosts(){
     let comSub = post.postContainer.children[7]
     let deleteBtn = post.postContainer.children[6]
     
-    
-    
-    sortButton.addEventListener("click", function(e){
+    function sortedPosts(){
       let postContainer = document.querySelectorAll('.post-container')
+      let mainDiv = document.querySelector('#div-container')
       let alphabeticalPosts = Array.from(postContainer).sort((a, b) => {
         nameA = a.children.item(a).innerHTML 
         nameB = b.children.item(b).innerHTML 
@@ -35,24 +34,47 @@ function getPosts(){
         }
         return 0
       })
-      // console.log(alphabeticalPosts)
-      let mainDiv = document.querySelector('#div-container')
       mainDiv.childNodes.forEach((el) => {
         el.remove()
       })
-      let sortedContainer = alphabeticalPosts.forEach((el) => {
+      alphabeticalPosts.forEach((el) => {
         mainDiv.append(el)
       })
+      return alphabeticalPosts
+    }
+    
+    sortButton.addEventListener("click", function(e){
+      sortedPosts()
+    })
+
+    let searchBar = document.getElementById("searchBar")
+
+    //SEARCH FUNCTIONALITY vv
+
+    searchBar.addEventListener("keyup", function(e){
+      let val = e.target.value.toLowerCase()
+      let posts = document.getElementsByClassName("post-container")
+      Array.from(posts).forEach(function(post){
+        let title = post.children[0].innerHTML
+        if(title.toLowerCase().indexOf(val) != -1){
+          post.style.display = 'block'
+        } else {
+          post.style.display = "none"
+        }
+        
+      })
+
+      handleSearch(sortedPosts, val)
+    })
 
 
-})
 
 let comments = postData.attributes.comments
 comments.forEach(c => {
-  console.log(c.content)
+  // console.log(c.content)
   // let postContainer = document.querySelector(`[data-id='${postData.id}'] .post-container`)
   let newComment = new Comment(c.content)
-  console.log(newComment)
+  // console.log(newComment)
   newComment.content = c.content
   newComment.id = c.id
   newComment.post_id = c.post_id
@@ -77,7 +99,7 @@ comments.forEach(c => {
   // }
   // console.log(c.id)
   // console.log(postData)
-})
+})  
 
 // let likeBtn = post.postContainer.children[3]
 // console.log(likeBtn)
@@ -295,7 +317,7 @@ function postFetch(title, image_url){
         })
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          // console.log(data)
 
           // bodyData.data.attributes.like = 0
           // let current_post = document.querySelector(`[data-id='${bodyData.id}']`)
@@ -306,9 +328,9 @@ function postFetch(title, image_url){
           postC.setAttribute("data-id", `${bodyData.id}`);
 
           let pTitle = document.createElement("h3");
-          let h3Text = document.createTextNode(`${bodyData.title}`)
+          let h3Text = document.createTextNode(`${data.data.attributes.title}`)
           let img = document.createElement("img");
-          img.setAttribute("src", `${bodyData.image_url}`)
+          img.setAttribute("src", `${data.data.attributes.image_url}`)
           img.setAttribute("height", "350");
           img.setAttribute("width", "250");
 
@@ -318,7 +340,7 @@ function postFetch(title, image_url){
           let eBtn = document.createElement("button")
           let ebtnTxt = document.createTextNode("Edit");
           let lBtn = document.createElement("h5");
-          let lTxt = document.createTextNode(`♡ ${bodyData.data.attributes.likes}`);
+          let lTxt = document.createTextNode(`♡ ${data.data.attributes.likes}`);
           // lTxt.setAttribute("value", `♡ ${0}`)
           let dBtn = document.createElement("button");
           let dTxt = document.createTextNode("Delete");

@@ -8,16 +8,23 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <script src="src/index.js"></script>
     <h2 id="title">Welcome to Instantgram!</h2>
     <form id="post-form" action="index.html" method="post">
       <input id="input-title" type="text" name="title" value="" placeholder="title"><br>
       <input id="input-url" type="text" name="url" value="" placeholder="URL"><br>
       <input id="submit-button" type="submit" name="submit" value="Submit">
     </form>
+
     <div id="sort-div">
       <button id="sort-button">Sort</button>
     </div>
+    <form id="searchForm" action="index.html" method="get">
+      <input id="searchBar" type="search" placeholder="Search"></input>
+      <input type="submit"></input>
+    </form>
+      
     <div id="div-container"></div>
-    <script src="src/index.js"></script>
+    
   </body>
 </html>
